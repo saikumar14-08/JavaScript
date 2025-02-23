@@ -1,0 +1,19 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.outer {
+  overflow: hidden;
+  border-radius: 5px;
+  
+}
+
+.inner {
+  border: 2px solid black;
+  margin: 1rem;
+  overflow: hidden;
+  border-radius: 2rem;
+  
+}
