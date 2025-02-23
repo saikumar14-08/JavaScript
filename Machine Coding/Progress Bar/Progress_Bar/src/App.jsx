@@ -1,39 +1,42 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
-
-
-const ProgressBar = ({ progress }) => {
-
+export const ProgressBar = ({ progress }) => {
   const [progressWidth, setProgressWidth] = useState(0);
+  const barStyles = {
+    transform: `translate(${progressWidth - 100}%`,
+    backgroundColor: "blue",
+    color: `${progressWidth < 6 ? "black" : "white"}`,
+    transition: "2s ease-in",
+  };
+
   useEffect(() => {
-    setTimeout(() => setProgressWidth(progress), 500)
-  },[progressWidth])
+    setTimeout(() => setProgressWidth(progress), 500);
+  }, [progressWidth]);
+
   return (
-    <div
-      style={{
-        transform:  `translateX(${progressWidth-100}%)`,
-        backgroundColor: "red",
-        textAlign: "end",
-        color: `${progressWidth>5 ? "white" : "black"}`,
-        transition: "2s ease-in"
-      }}
-    >
-      {progressWidth}%
+    <div className="outer">
+      <div
+        className="inner"
+        aria-valuenow={progressWidth}
+        aria-valuemax={100}
+        aria-valuemin={0}
+        style={barStyles}
+      >
+        {progressWidth}%
+      </div>
     </div>
   );
 };
+
 function App() {
   const bars = [5, 10, 20, 40, 80, 100];
   return (
     <>
-      <div className="outer">
-        {bars.map((val) => (
-          <div className="inner" key={val} >
-            <ProgressBar progress={val} />
-          </div>
-        ))}
-      </div>
+      <h1 style={{ textAlign: "center" }}>Progress bar testing</h1>
+      {bars.map((val) => (
+        <ProgressBar key={val} progress={val} />
+      ))}
     </>
   );
 }

@@ -5,15 +5,14 @@
 }
 
 .outer {
+  border: 1px solid;
+  margin: 1rem;
   overflow: hidden;
-  border-radius: 5px;
+  text-align: right;
   
+  border-radius: 1rem;
 }
 
 .inner {
-  border: 2px solid black;
-  margin: 1rem;
-  overflow: hidden;
-  border-radius: 2rem;
-  
+  border-radius: 1rem;
 }
