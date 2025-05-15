@@ -1,17 +1,26 @@
+# Throttling
+## 📌 Throttling Function
+Description of Throttling
+### 🧠 Code
+```js
+const Throttling = (fn, delay) => {
+  let lastCall = 0;
+  return function (...args) {
+    const now = performance.now();
+    if (now - lastCall >= delay) {
+      fn.apply(this, args);
+      lastCall = now;
+    }
+  };
+};
+let btnId = document.getElementById("click-btn");
+let throttleCheck = Throttling(() => console.log("Button Clicked"), 2500);
+btnId.addEventListener("click", throttleCheck);
+```
 # Deepcopying of an object.
-const DeepCopy = (obj) => {
-  if(typeof obj !== 'object' || obj === null) return obj;
-  const deepCpy = Array.isArray(obj) ? [] : {};
-  for(let key in obj) {
-    let val = obj[key];
-    deepCpy[key] = DeepCopy(val);
-  }
-  return deepCpy
-}
+# Currying
 # Memoization
 # Debouncing
-# Throttling
-# Currying
 
 ## Polyfills
 # map
