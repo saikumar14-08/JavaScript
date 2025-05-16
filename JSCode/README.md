@@ -153,7 +153,7 @@ console.log(s.myRepeat(0));
 ```
 
 3. `Array.prototype.forEach`
-
+Check if there is any misconception here.
 ```js
 Array.prototype.myForEach = function (fn) {
   for (let i = 0; i < this.length; i++) {
@@ -170,9 +170,62 @@ console.log(ip);
 ```
 
 4. `Array.prototype.map`
+```js
+Array.prototype.myMap = function(fn) {
+  let op = [];
+  let ipAr = this;
+  for(let i=0;i<ipAr.length;i++) {
+    op.push(fn(ipAr[i],i));
+  }
+  return op;
+}
+
+let inp = [1,2,3,4,5,6]
+let opAr = inp.myMap((el,i) => el*i);
+console.log(opAr);
+```
+
 5. `Array.prototype.filter`
+```js
+Array.prototype.myFilter = function(fn) {
+  let op = [];
+  for(let i=0;i<this.length;i++) {
+    if(fn(this[i],i)) op.push(this[i])
+  }
+return op;
+}
+let inp = [1,2,3,4,5,6]
+let opAr = inp.myFilter((el,i) => {
+  console.log(i);  
+  return el%2===0
+});
+console.log(opAr);
+```
 6. `Array.prototype.find`
+```js
+Array.prototype.myFind = function (fn) {
+  for (let i = 0; i < this.length; i++) {
+    if (fn(this[i])) return this[i];
+  }
+  return undefined;
+};
+const numbers = [10, 20, 30, 40, 50];
+const foundNumber = numbers.myFind((number) => number > 52);
+console.log(foundNumber);
+```
 7. `Array.prototype.findIndex`
+```js
+Array.prototype.myFindIndex = function (fn) {
+  for (let i = 0; i < this.length; i++) {
+    if (fn(this[i])) return i;
+  }
+  return -1;
+};
+
+const array1 = [5, 12, 8, 130, 44];
+const isLargeNumber = (element) => element > 13;
+console.log(array1.myFindIndex(isLargeNumber));
+```
 8. `Array.prototype.some`
 9. `Array.prototype.every`
 10. `Array.prototype.slice`
