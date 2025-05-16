@@ -96,31 +96,56 @@ Description of currying.
 ```js
 
 ```
+# 🧠 JavaScript Polyfill Practice – Ordered by Difficulty
 
-## Polyfills
-# map
-# filter
-# reduce
-# forEach
-# Array.prototype.flat
-# flatMap
-# some
-# every
-# find
-# findIndex
-# slice
-# splice
-# Object.freeze
-# Object.seal
-# Promise
-# Promise.all
-# Promise.race
-# Promise.allSettled
-# Array.isArray()
-# call
-# apply
-# bind
-# compose
-# pipe
-# String.prototype.repeat
-# 
+This list ranks common JavaScript polyfill topics from easiest to hardest, based on logic complexity and real-world interview expectations.
+
+---
+
+## 🟢 Beginner-Friendly (Straightforward Logic)
+
+1. `Array.isArray()`
+2. `String.prototype.repeat`
+3. `Array.prototype.forEach`
+4. `Array.prototype.map`
+5. `Array.prototype.filter`
+6. `Array.prototype.find`
+7. `Array.prototype.findIndex`
+8. `Array.prototype.some`
+9. `Array.prototype.every`
+10. `Array.prototype.slice`
+
+---
+
+## 🟡 Intermediate (Requires Index/State Management)
+
+11. `Array.prototype.reduce`
+12. `Array.prototype.flat`
+13. `Array.prototype.flatMap`
+14. `Array.prototype.splice`
+15. `Object.freeze`
+16. `Object.seal`
+
+---
+
+## 🔴 Advanced (Context, Closures, Higher-Order Functions)
+
+17. `Function.prototype.call`
+18. `Function.prototype.apply`
+19. `Function.prototype.bind`
+20. `Function Composition (compose)`
+21. `Function Composition (pipe)`
+
+---
+
+## 🔥 Expert Level (Async, Edge Case Heavy)
+
+22. `Promise` (constructor, `.then`, `.catch`)
+23. `Promise.all`
+24. `Promise.race`
+25. `Promise.allSettled`
+
+---
+
+✅ Start from the top, and build your confidence with simpler polyfills before diving into asynchronous logic or function binding behavior.
+
