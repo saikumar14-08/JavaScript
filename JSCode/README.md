@@ -105,7 +105,30 @@ This list ranks common JavaScript polyfill topics from easiest to hardest, based
 ## 🟢 Beginner-Friendly (Straightforward Logic)
 
 1. `Array.isArray()`
+```js
+const isArrChk = function(args) {
+  return Object.prototype.toString.call(args) === '[object Array]'
+}
+let ip = "[1,2,3,4,5,6,7,8,9]"
+console.log(isArrChk(ip));
+```
 2. `String.prototype.repeat`
+```js
+String.prototype.myRepeat = function (times) {
+  let op = "";
+  if (times < 0)
+    throw new RangeError("Range Error: Frequesny can't be negative.");
+  if (typeof times !== "number" || !times) return "";
+  while (times > 0) {
+    op += this;
+    times--;
+  }
+  return op;
+};
+
+let s = "Sai";
+console.log(s.myRepeat(0));
+```
 3. `Array.prototype.forEach`
 4. `Array.prototype.map`
 5. `Array.prototype.filter`
